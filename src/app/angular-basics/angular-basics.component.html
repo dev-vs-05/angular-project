@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Angular Basics</title>
+</head>
+<body>
+  <div class="m-3">
+    <h3 class="mb-10px">String interpolation</h3>
+    <p>Server with Id - {{ getServerId() }} is "{{ getServerStatus() }}"</p>
+  </div>
+
+  <div class="m-3">
+    <h3 class="mb-10px">Property Binding</h3>
+    <button type="button" class="btn btn-primary" [disabled]="!addNewEmp">Add Employee</button>
+  </div>
+
+  <div class="m-3">
+    <h3 class="mb-10px">Event Binding</h3>
+    <button type="button" class="btn btn-primary mb-10px" (click)="onClickEventChange()">Change Event</button>
+    <p>{{ changeEvent }}</p>
+  </div>
+
+  <div class="m-3">
+    <h3 class="mb-10px">Two-Way Binding</h3>
+    <input type="text" class="form-control mb-10px" [(ngModel)]="empName" />
+    <button type="button" class="btn btn-primary mb-10px" (click)="onClickChangeName()">Change Emp Name</button>
+    <p>{{ empName }}</p>
+  </div>
+
+  <div class="m-3">
+    <h3 class="mb-10px">Four forms of data binding = String interpolation, Property Binding, Event Binding, Two-way-binding</h3>
+    <input type="text" class="form-control mb-10px" [(ngModel)]="studentName" />
+    <button type="button" class="btn btn-primary mb-10px" (click)="showInputData()">Show data</button>
+    <p>{{ displayData }}</p>
+  </div>
+
+</body>
+</html>
