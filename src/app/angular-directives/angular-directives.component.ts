@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AngularDirectivesComponent implements OnInit {
 
+  public serverName = '';
+  public dataAdded = false;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  }
+
+  onClickAddData() {
+    this.dataAdded = true;
   }
 
 }

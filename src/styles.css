@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url(./fonts/Montserrat-Italic.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url(./fonts/Montserrat-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url(./fonts/Montserrat-Medium.ttf);
+  font-weight: 500;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url(./fonts/Montserrat-SemiBold.ttf);
+  font-weight: 700;
+  font-style: semi-bold;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url(./fonts/Montserrat-Bold.ttf);
+  font-weight: 800;
+  font-style: bold;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 html,
 body {
   margin: 0;
@@ -14,10 +54,6 @@ ul,
 li,
 p {
   margin: 0;
-}
-
-.m-3 {
-  margin: 30px;
 }
 
 .mb-10px {
