@@ -1,0 +1,52 @@
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="form-wrapper">
+        <h2 class="mb-3">Angular Reactive Approach Forms</h2>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmitReactiveForm()">
+          <!-- Grouping of forms inside formGroup by creating new formGroup with object inside it and by specifying path of formGroup -->
+          <div formGroupName="userData">
+            <div class="mb-3">
+              <label for="name" class="mb-1">Full name:</label>
+              <input type="text" name="fname" id="name" class="form-control" formControlName="fname" />
+              <p class="error-message" *ngIf="!signUpForm.get('userData.fname').valid && signUpForm.get('userData.fname').touched">This field is required</p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="email" class="mb-1">Email:</label>
+              <input type="email" name="email" id="email" class="form-control" formControlName="email" />
+              <p class="error-message" *ngIf="!signUpForm.get('userData.email').valid && signUpForm.get('userData.email').touched">This field is required</p>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label>Gender:</label>
+            <div class="d-flex form-control">
+              <div class="input-wrapper me-3" *ngFor="let gender of genders">
+                <label class="input-label">
+                  <input type="radio" name="gender" [value]="gender" formControlName="gender" />                  
+                  {{ gender }}
+                </label>
+              </div>
+            </div>
+            <p class="error-message" *ngIf="!signUpForm.get('gender').valid && signUpForm.get('gender').touched">This field is required</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="">Submit</button>
+
+          <br><br><br>
+
+          <!-- <div class="display-data" *ngIf="submitted">
+            <label><u>Display fetched data:-</u></label>
+            <br><br>
+            <p>Full name: {{ user.fullName }}</p>
+            <p>Email: {{ user.email }}</p>
+            <p>Gender: {{ user.gender }}</p>
+          </div> -->
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
