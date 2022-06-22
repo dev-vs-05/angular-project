@@ -6,6 +6,10 @@ import { AngularBasicsComponent } from './angular-basics/angular-basics.componen
 import { FormsModule } from '@angular/forms';
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 import { AngularComponentsAndDatabindingComponent } from './angular-components-and-databinding/angular-components-and-databinding.component';
+import { AngularFormsComponent } from './angular-forms/angular-forms.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularReactiveFormComponent } from './angular-forms/angular-reactive-form/angular-reactive-form.component';
+
 
 @NgModule({
   declarations: [
@@ -13,10 +17,13 @@ import { AngularComponentsAndDatabindingComponent } from './angular-components-a
     AngularBasicsComponent,
     AngularDirectivesComponent,
     AngularComponentsAndDatabindingComponent,
+    AngularFormsComponent,
+    AngularReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

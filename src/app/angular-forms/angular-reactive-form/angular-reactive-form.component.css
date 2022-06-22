@@ -1,0 +1,21 @@
+.form-wrapper {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.input-wrapper,
+.input-wrapper .input-label,
+.input-wrapper input[type=radio] {
+  cursor: pointer;
+}
+
+.input-label {
+  margin-right: 5px;
+}
+
+.display-data {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 5px;
+}
