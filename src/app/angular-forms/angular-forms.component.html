@@ -1,0 +1,61 @@
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="form-wrapper">
+        <h2 class="mb-3">Angular Template Driven Forms</h2>
+        <form (ngSubmit)="onClickSubmit(formGroup)" #formGroup="ngForm">          
+          <!-- #formGroup => it is known as local reference & pass this local reference as argument in form "onClickSubmit(formGroup)" function -->
+          <div class="mb-3">
+            <label for="name" class="mb-1">Full name:</label>
+            <input type="text" name="fname" id="name" class="form-control" ngModel required #name="ngModel" />
+            <p class="error-message" *ngIf="!name.valid && name.touched">This field is required</p>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="mb-1">Email:</label>
+            <input type="email" name="email" id="email" class="form-control" ngModel required #email="ngModel" />
+            <p class="error-message" *ngIf="!email.valid && email.touched">This field is required</p>
+          </div>
+
+          <div class="mb-3">
+            <label for="question">Your favourite game?</label>
+            <select name="game" class="form-control" id="question" [ngModel]="defaultQuestion">
+              <option value="football">Football</option>
+              <option value="cricket">Cricket</option>
+              <option value="basketball">Basketball</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label>Gender:</label>
+            <div class="d-flex form-control">
+              <div class="input-wrapper me-3" *ngFor="let gender of genders">
+                <label class="input-label">
+                  <input type="radio" name="gender" [value]="gender" required ngModel />                  
+                  <!-- while binding radio button always keep value in square brackets => [value] done a property binding -->
+                  {{ gender }}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Submit</button>
+
+          <br><br><br>
+
+          <div class="display-data" *ngIf="submitted">
+            <label><u>Display fetched data:-</u></label>
+            <br><br>
+            <p>Full name: {{ user.fullName }}</p>
+            <p>Email: {{ user.email }}</p>
+            <p>Fav Game: {{ user.favGame }}</p>
+            <p>Gender: {{ user.gender }}</p>
+
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
